@@ -7,7 +7,8 @@ import VocabLogoImage from "../../images/vocab-logo.svg";
 const Header = () => (
     <Wrapper>
         <Content>            
-            <VocabLogo src={VocabLogoImage} />           
+            <VocabLogo src={VocabLogoImage} />
+            <h2>The Vocab App</h2>            
         </Content>
     </Wrapper>
 )

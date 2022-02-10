@@ -2,22 +2,31 @@ import React from 'react';
 
 //components
 import Header from './components/Header';
-/* import logo from './images/write.png'; */
+import Login from './components/Login';
+import ImageForm from './components/Form';
 
 //styles
 import {GlobalStyle} from './globalStyling';
 
-function App() {
-  return (
-    <div className="App">
-      {/* <img src={logo} alt='logo'/> */}
-      <Header/>      
-      <h1> Welcome to Vocab the App</h1>
+//router
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
-      {/*Using global style*/}
-      <GlobalStyle />
-    </div>
+/* use arrow func. for implicit return */
+const App = () => (
+
+  /* Wrap everything inside the Router */
+      <Router>
+
+        {/* Put all routes inside Routes tag */}
+        <Routes>
+          {/* Lay down the route inside the Route tag */}
+          <Route path='/login' element={<Login />} />
+          <Route path='/upload' element={<ImageForm />} />
+          <Route path='/' element={<Header />} />          
+        </Routes>                      
+        {/*Using global style*/}
+        <GlobalStyle />
+      </Router>    
   );
-}
 
 export default App;
